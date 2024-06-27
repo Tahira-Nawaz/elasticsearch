@@ -1,43 +1,47 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-volume-0
+  name: pv-data-1
 spec:
   capacity:
     storage: 30Gi
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard  # Ensure this matches the PVCs
+  storageClassName: standard  # Optional: Set the appropriate storage class
   hostPath:
-    path: "/mnt/data0"  # Adjust this path as needed for your environment
+    path: /mnt/data-0  # Replace with your actual host path
 
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-volume-1
+  name: pv-data-1
 spec:
   capacity:
     storage: 30Gi
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard  # Ensure this matches the PVCs
+  storageClassName: standard  # Optional: Set the appropriate storage class
   hostPath:
-    path: "/mnt/data1"  # Adjust this path as needed for your environment
+    path: /mnt/data-1  # Replace with your actual host path
 
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-volume-2
+  name: pv-data-1
 spec:
   capacity:
     storage: 30Gi
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard  # Ensure this matches the PVCs
+  storageClassName: standard  # Optional: Set the appropriate storage class
   hostPath:
-    path: "/mnt/data2"  # Adjust this path as needed for your environment
+    path: /mnt/data-2  # Replace with your actual host path
+
