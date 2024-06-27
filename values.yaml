@@ -1,0 +1,32 @@
+clusterName: "my-es-cluster"
+nodeGroup: "master"
+
+roles:
+  master: "true"
+  ingest: "true"
+  data: "true"
+
+replicas: 3
+
+esConfig:
+  elasticsearch.yml: |
+    cluster.name: "my-es-cluster"
+    network.host: 0.0.0.0
+    node.name: ${HOSTNAME}
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "512Mi"
+  limits:
+    cpu: "1000m"
+    memory: "1Gi"
+
+volumeClaimTemplate:
+  accessModes: [ "ReadWriteOnce" ]
+  resources:
+    requests:
+      storage: 30Gi
+
+persistence:
+  enabled: true
