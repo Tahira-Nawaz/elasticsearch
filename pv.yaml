@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-data-1
+  name: pv-elasticsearch-0
 spec:
   capacity:
     storage: 10Gi
@@ -9,14 +9,14 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard  # Set the appropriate storage class name
+  storageClassName: standard  # Replace with your storage class name
   hostPath:
-    path: /mnt/data-1  # Replace with your actual host path
+    path: /mnt/data-elasticsearch-0  # Replace with your actual host path for pod elasticsearch-master-0
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-data-2
+  name: pv-elasticsearch-1
 spec:
   capacity:
     storage: 10Gi
@@ -24,14 +24,14 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard  # Set the appropriate storage class name
+  storageClassName: standard  # Replace with your storage class name
   hostPath:
-    path: /mnt/data-2  # Replace with your actual host path
+    path: /mnt/data-elasticsearch-1  # Replace with your actual host path for pod elasticsearch-master-1
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-data-3
+  name: pv-elasticsearch-2
 spec:
   capacity:
     storage: 10Gi
@@ -39,6 +39,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard  # Set the appropriate storage class name
+  storageClassName: standard  # Replace with your storage class name
   hostPath:
-    path: /mnt/data-3  # Replace with your actual host path
+    path: /mnt/data-elasticsearch-2  # Replace with your actual host path for pod elasticsearch-master-2
