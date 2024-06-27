@@ -8,8 +8,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: standard  # Ensure this matches the PVs
-
+  storageClassName: standard  # Ensure this matches your PVs
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -21,8 +20,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: standard  # Ensure this matches the PVs
-
+  storageClassName: standard  # Ensure this matches your PVs
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -34,4 +32,4 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: standard  # Ensure this matches the PVs
+  storageClassName: standard  # Ensure this matches your PVs
